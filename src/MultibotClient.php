@@ -104,6 +104,18 @@ class MultibotClient{
         return $response->getBody()->getContents();
                 
     }
+
+    public function getAllInfoBot(){
+                  
+        
+        $headers = ['Content-Type' => 'application/json' ];
+        
+        $request = new Request('GET', '/bot/info/all', $headers);
+        $response = $this->client->send($request);
+    
+        return $response->getBody()->getContents();
+                
+    }
     
 
 
