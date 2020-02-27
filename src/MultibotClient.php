@@ -88,8 +88,7 @@ class MultibotClient{
 
 
     public function getInfoBot($idBot){
-        
-               
+                  
         $body = new \stdClass();
         
         //Setting Body JSON for Rquest
@@ -99,7 +98,7 @@ class MultibotClient{
         
         $headers = ['Content-Type' => 'application/json' ];
         
-        $request = new Request('POST', '/api/v1/data/pdf', $headers, $bodyJSON);
+        $request = new Request('GET', '/bot/info', $headers, $bodyJSON);
         $response = $this->client->send($request);
     
         return $response->getBody()->getContents();
