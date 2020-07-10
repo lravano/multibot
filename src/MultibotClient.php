@@ -194,6 +194,23 @@ class MultibotClient{
        
     }
 
+
+    public function deleteUsersBot($idBot){
+        
+        $body = new \stdClass();
+        
+        $body->id_cache = $idBot;
+        $bodyJSON = json_encode($body);
+        
+        $headers = ['Content-Type' => 'application/json' ];
+        
+        $request = new Request('DELETE', '/bot/user/idbot', $headers, $bodyJSON);
+        $response = $this->client->send($request);
+    
+        return $response->getBody()->getContents();  
+       
+    }
+
  
 }
 
