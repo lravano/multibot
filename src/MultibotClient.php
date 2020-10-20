@@ -155,7 +155,7 @@ class MultibotClient{
     }
 
 
-    public function setBot($idBot,$token_face,$instagram_id,$first_message,$last_message,$num_tags){
+    public function setBot($idBot,$token_face,$instagram_id,$first_message,$last_message,$num_tags,$wait){
         
         $body = new \stdClass();
         
@@ -165,6 +165,7 @@ class MultibotClient{
         $body->first_message = $first_message;
         $body->last_message = $last_message; 
         $body->num_tags = $num_tags;
+        $body->wait = $wait;
 
         $bodyJSON = json_encode($body);
         
